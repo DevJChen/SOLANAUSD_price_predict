@@ -1,0 +1,25 @@
+# Python specific ignores
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.pyo
+
+# Environment variables
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Other
+*.log
+*.csv

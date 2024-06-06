@@ -1,0 +1,38 @@
+ARIMA (Timeseries Model):
+- Train Order (5, 1, 1)
+- p (the number of lag observations included in the model, also known as the lag order) = 5
+- d (the number of times that the raw observations are differenced to make the time series stationary) = 1
+- q (the size of the moving average window, also known as the order of moving average) = 1
+- MSE (6251)
+
+It didn't perform that well. However, when predicting the confidence interval of the stock price, it predicted a confidence interval showing that the stock price 
+would go up to a certain range, and after observing that confidence interval we can see that the stock price go up to where that confidence interval was.
+So maybe the ARIMA model forecasting is not that bad for predicintg long term, but maybe short term it is not so good
+
+
+
+LSTM (Neural Network):
+Structure
+-LSTM (256, relu)
+    - Dropout (.3)
+    - Batch Normalization
+-LSTM (128, relu)
+    - Dropout (.3)
+    - Batch Normalization
+-LSTM (64, relu)
+    - Dropout (.3)
+    - Batch Normalization
+-Dense (units=num_classes, activation='soft_max')
+-Dense (units=num_classes, activation='soft_max')
+-Optimizer (Adam) with a learning rate of .001
+-Loss: sparse_categorical_crossentropy
+-metrics: accuracy
+
+
+In terms of how it performed, I can say that it had less that a 40% accuracy at the epoch of 2000 when I trained it, but looking at the graph I can see that
+at a certain range of epochs around 0-400 epochs had an average of 60% model accuracy. The training as the epochs increased had an accuracy of close to 95%, 
+which is good because we want it as close to 1 as possible. 
+
+
+
+
